@@ -7,4 +7,5 @@
    .\create_flutter_structure.ps1
 
 
-![image](https://github.com/user-attachments/assets/ad3186c9-081e-4e43-8b36-899209826782)
+![image](https://github.com/user-attachments/assets/9694000f-32cf-40dd-a6ff-c13830e92d6d)
+
