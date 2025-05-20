@@ -17,20 +17,26 @@ $folders = @(
     "lib/core/utils",
     
     # Features using clean architecture
-    "lib/features/auth/data",
+    "lib/features/auth/data/repository",
+    "lib/features/auth/data/model",
     "lib/features/auth/domain",
     "lib/features/auth/presentation/screens",
     "lib/features/auth/presentation/widgets",
+    "lib/features/auth/presentation/provider",
     
-    "lib/features/home/data",
+    "lib/features/home/data/repository",
+    "lib/features/home/data/model",
     "lib/features/home/domain",
     "lib/features/home/presentation/screens",
     "lib/features/home/presentation/widgets",
+    "lib/features/home/presentation/provider",
     
-    "lib/features/profile/data",
+    "lib/features/profile/data/repository",
+    "lib/features/profile/data/model",
     "lib/features/profile/domain",
     "lib/features/profile/presentation/screens",
     "lib/features/profile/presentation/widgets",
+    "lib/features/profile/presentation/provider",
     
     # Shared components
     "lib/shared/widgets",
@@ -51,14 +57,6 @@ foreach ($folder in $folders) {
     }
 }
 
-# Create empty .gitkeep files to track empty directories in git
-foreach ($folder in $folders) {
-    $gitkeepFile = Join-Path $folder ".gitkeep"
-    if (-not (Test-Path $gitkeepFile)) {
-        New-Item -ItemType File -Path $gitkeepFile -Force | Out-Null
-    }
-}
-
 # Create empty placeholder files for important structures (without content)
 $placeholderFiles = @(
     "lib/navigation/app_router.dart",
@@ -73,7 +71,6 @@ foreach ($file in $placeholderFiles) {
         Write-Host "Created empty placeholder file: $file"
     }
 }
-
 
 Write-Host ""
 Write-Host "+---------------------------------------------------------------+"
